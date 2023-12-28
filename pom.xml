@@ -20,6 +20,19 @@
         <module>Section-03-Basics</module>
         <module>Section-04-First-Project</module>
         <module>Section-05-Spring-Data-JPA</module>
+        <module>Section-06-Create-REST-CRUD-Api</module>
+        <module>Section-07-Creating-A-REST-Client</module>
+        <module>Section-08-Profile</module>
+        <module>Section-09-Logging</module>
+        <module>Section-10-Health-Checks-And-Metrics</module>
+        <module>Section-11-Spring-Security</module>
+        <module>Section-12-Thymeleaf</module>
+        <module>Section-13-Database-Caching</module>
+        <module>Section-14-Spring-Batch</module>
+        <module>Section-15-Unit-Testing-using-MockMvc</module>
+        <module>Section-16-Message-And-Spring-JMS</module>
+        <module>Section-20-Spring-Reactive-Programming</module>
+        <module>Section-22-Reactive-Testing</module>
     </modules>
 
     <properties>
@@ -32,16 +45,43 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-json</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
             <scope>test</scope>
         </dependency>
 

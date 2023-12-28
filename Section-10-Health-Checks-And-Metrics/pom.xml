@@ -9,14 +9,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Section-05-Spring-Data-JPA</artifactId>
+    <artifactId>Section-10-Health-Checks-And-Metrics</artifactId>
 
     <properties>
-        <Project.name>Section-05-Spring-Data-JPA</Project.name>
+        <Project.name>Section-10-Health-Checks-And-Metrics</Project.name>
         <java.version>19</java.version>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <start-class>com.sid.tutorials.spring.boot3.app.Section05SpringDataJPA</start-class>
+        <start-class>com.sid.tutorials.spring.boot3.app.Section10HealthChecksAndMetrics</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -37,6 +37,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.2.0</version>
@@ -46,5 +51,18 @@
     </dependencies>
     <build>
         <finalName>${Project.name}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 </project>

@@ -9,14 +9,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Section-05-Spring-Data-JPA</artifactId>
+    <artifactId>Section-15-Unit-Testing-using-MockMvc</artifactId>
 
     <properties>
-        <Project.name>Section-05-Spring-Data-JPA</Project.name>
+        <Project.name>Section-15-Unit-Testing-using-MockMvc</Project.name>
         <java.version>19</java.version>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <start-class>com.sid.tutorials.spring.boot3.app.Section05SpringDataJPA</start-class>
+        <start-class>com.sid.tutorials.spring.boot3.app.Section15UnitTestingusingMockMvc</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -37,14 +37,36 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.2.0</version>
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Cache Implementation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.hazelcast/hazelcast -->
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-spring</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>${Project.name}</finalName>
     </build>
+
 </project>
